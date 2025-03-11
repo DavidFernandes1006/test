@@ -1,9 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Response>
-  <Say language="fr-FR" voice="Polly.Celine">Bonjour, parlez après le bip.</Say>
-  <Gather input="speech" language="fr-FR" speechTimeout="auto" action="https://votre-webhook-make.com/processing" method="POST">
-    <!-- Le <Gather> attend la réponse vocale -->
+  <Say language="fr-FR" voice="Polly.Celine">
+    Bonjour, je suis votre assistant vocal. Parlez après le bip.
+  </Say>
+  <Gather input="speech" language="fr-FR" speechTimeout="auto"
+          action="https://votre-webhook-make.com/twilioHook"
+          method="POST">
+    <!-- Twilio écoute l'appelant ici -->
   </Gather>
-  <Say language="fr-FR" voice="Polly.Celine">Je n'ai rien entendu, au revoir.</Say>
+  <Say language="fr-FR" voice="Polly.Celine">
+    Je n'ai rien entendu, au revoir.
+  </Say>
   <Hangup/>
 </Response>
